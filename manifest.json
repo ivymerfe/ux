@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "ux",
+  "description": "gpt ui enchancements",
+  "version": "1.0",
+  "author": "Ivy",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "css": ["styles/chatgpt.css"],
+      "js": ["scripts/chatgpt.js", "scripts/common.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "css": ["styles/gemini.css"],
+      "js": ["scripts/gemini.js", "scripts/common.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://chat.deepseek.com/*"],
+      "css": ["styles/deepseek.css"],
+      "js": ["scripts/deepseek.js", "scripts/common.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+:root {
+    --message-list-padding-horizontal: 20px !important;
+    --message-list-max-width: 100% !important;
+}
+
+body[data-ds-dark-theme] {
+    --dsw-specific-input-major: #151515dd !important;
+    --dsw-static-neutral-bluish-950: #101010 !important;
+    --dsw-static-neutral-bluish-900: #101010 !important;
+    --dsw-static-neutral-bluish-875: #141414 !important;
+    --dsw-static-neutral-bluish-850: #181818 !important;
+    --dsw-static-neutral-bluish-800: #202020 !important;
+    --dsw-static-neutral-bluish-750: #252525 !important;
+}
+
+.d72636e2 {
+    background: transparent !important;
+}
+
+._871cbca {
+    background: transparent !important;
+}
+
+._0fcaa63 {
+    display: none !important;
+}
+
+.ec4f5d61 {
+    padding-top: 0 !important;
+}
+
+._2be88ba {
+    position: absolute !important;
+    width: 100% !important;
+}
+
+.f8d1e4c0 {
+    display: none !important;
+}
+
+._546d736 ._254829d {
+    background: var(--dsw-static-neutral-bluish-800) !important;
+}
+
+[data-ds-dark-theme] ._5a8ac7a {
+    box-shadow: none !important;
+}

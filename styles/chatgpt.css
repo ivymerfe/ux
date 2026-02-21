@@ -1,0 +1,47 @@
+
+.dark {
+    --bg-primary: #101010aa !important;
+    --main-surface-primary: #101010aa !important;
+    --sidebar-surface-primary: transparent !important;
+    --bg-elevated-secondary: #101010 !important;
+}
+
+.bg-token-bg-primary {
+    background: #151515dd !important;
+}
+
+#thread-bottom-container {
+    background: transparent !important;
+}
+
+#thread-bottom-container:after {
+    background: transparent !important;
+}
+
+div[data-testid="accounts-profile-button"] + div {
+    display: none !important;
+}
+
+.\[view-transition-name\:var\(--vt-disclaimer\)\] {
+    display: none !important;
+}
+
+.\[--thread-content-max-width\:40rem\] {
+    --thread-content-max-width: 100% !important;
+}
+
+.\[--thread-content-margin\:--spacing\(4\)\] {
+    --thread-content-margin: calc(var(--spacing) * 1);
+}
+
+.\[--thread-content-margin\:--spacing\(6\)\] {
+    --thread-content-margin: calc(var(--spacing) * 2);
+}
+
+.absolute.start-0.end-0.bottom-full.-z-1 {
+    display: none;
+}
+
+table {
+    padding-left: 2rem;
+}
