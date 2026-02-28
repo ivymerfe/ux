@@ -35,19 +35,19 @@ function stopScrolling() {
 }
 
 window.addEventListener('keydown', function (e) {
-    if (e.altKey && e.code === 'KeyR') {
+    if (e.ctrlKey && e.code === 'KeyD') {
         if (!e.repeat) {
             startScrolling(1);
         }
         e.preventDefault();
     }
-    if (e.altKey && e.code === 'KeyF') {
+    if (e.ctrlKey && e.code === 'KeyF') {
         if (!e.repeat) {
             startScrolling(-1);
         }
         e.preventDefault();
     }
-    
+  
     const justKey = !e.altKey && !e.shiftKey && !e.ctrlKey && !e.metaKey;
     const isPaste = (e.ctrlKey || e.metaKey) && e.code === 'KeyV';
     
@@ -62,10 +62,10 @@ window.addEventListener('keydown', function (e) {
 }, true);
 
 window.addEventListener('keyup', function (e) {
-    if (e.code === 'KeyR' || e.code === 'KeyF') {
+    if (e.code === 'KeyD' || e.code === 'KeyF') {
         stopScrolling();
     }
-    if (!e.altKey) {
+    if (!e.ctrlKey) {
         stopScrolling();
     }
 }, true);
