@@ -35,13 +35,13 @@ function stopScrolling() {
 }
 
 window.addEventListener('keydown', function (e) {
-    if (e.ctrlKey && e.code === 'KeyD') {
+    if (e.ctrlKey && !e.shiftKey && e.code === 'KeyD') {
         if (!e.repeat) {
             startScrolling(1);
         }
         e.preventDefault();
     }
-    if (e.ctrlKey && e.code === 'KeyF') {
+    if (e.ctrlKey && !e.shiftKey && e.code === 'KeyF') {
         if (!e.repeat) {
             startScrolling(-1);
         }
