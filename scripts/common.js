@@ -39,21 +39,20 @@ function updateScrolling() {
 }
 
 window.addEventListener('keydown', function (e) {
-    if (e.ctrlKey && e.code === 'KeyW') {
+    if (e.ctrlKey && !e.shiftKey && e.code === 'KeyW') {
         if (!e.repeat) {
             directionUp = 1;
             updateScrolling();
         }
         e.preventDefault();
     }
-    if (e.ctrlKey && e.code === 'KeyD') {
+    if (e.ctrlKey && !e.shiftKey && e.code === 'KeyD') {
         if (!e.repeat) {
             directionDown = 1;
             updateScrolling();
         }
         e.preventDefault();
     }
-  
     const justKey = !e.altKey && !e.shiftKey && !e.ctrlKey && !e.metaKey;
     const isPaste = (e.ctrlKey || e.metaKey) && e.code === 'KeyV';
     
