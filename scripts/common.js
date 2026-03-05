@@ -2,6 +2,8 @@ const SCROLL_SPEED = 22;
 
 let scrollAnimationFrame = null;
 let scrollElement = null;
+let directionUp = 0;
+let directionDown = 0;
 
 function scrollUp() {
     if (scrollElement) {
@@ -9,41 +11,45 @@ function scrollUp() {
         scrollAnimationFrame = requestAnimationFrame(scrollUp);
     }
 }
-
 function scrollDown() {
     if (scrollElement) {
         scrollElement.scrollBy(0, SCROLL_SPEED);
         scrollAnimationFrame = requestAnimationFrame(scrollDown);
     }
 }
-
-function startScrolling(direction) {
-    if (scrollAnimationFrame) return;
-    scrollElement = document.querySelector(window.SCROLL_SELECTOR);
-    if (direction > 0) {
-        scrollDown();
-    } else {
-        scrollUp();
-    }
-}
-
 function stopScrolling() {
     if (scrollAnimationFrame) {
         cancelAnimationFrame(scrollAnimationFrame);
         scrollAnimationFrame = null;
     }
 }
+function updateScrolling() {
+    const dir = directionUp - directionDown;
+    if (dir === 0) {
+        stopScrolling();
+        return;
+    }
+    if (scrollAnimationFrame) return;
+    scrollElement = document.querySelector(window.SCROLL_SELECTOR);
+    if (dir > 0) {
+        scrollUp();
+    } else {
+        scrollDown();
+    }
+}
 
 window.addEventListener('keydown', function (e) {
-    if (e.ctrlKey && e.code === 'KeyD') {
+    if (e.ctrlKey && e.code === 'KeyW') {
         if (!e.repeat) {
-            startScrolling(1);
+            directionUp = 1;
+            updateScrolling();
         }
         e.preventDefault();
     }
-    if (e.ctrlKey && e.code === 'KeyF') {
+    if (e.ctrlKey && e.code === 'KeyD') {
         if (!e.repeat) {
-            startScrolling(-1);
+            directionDown = 1;
+            updateScrolling();
         }
         e.preventDefault();
     }
@@ -62,10 +68,23 @@ window.addEventListener('keydown', function (e) {
 }, true);
 
 window.addEventListener('keyup', function (e) {
-    if (e.code === 'KeyD' || e.code === 'KeyF') {
-        stopScrolling();
+    if (e.code === 'KeyW') {
+        directionUp = 0;
+        updateScrolling();
+    }
+    if (e.code === 'KeyD') {
+        directionDown = 0;
+        updateScrolling();
     }
     if (!e.ctrlKey) {
-        stopScrolling();
+        directionUp = 0;
+        directionDown = 0;
+        updateScrolling();
     }
+}, true);
+
+window.addEventListener('blur', () => {
+    directionUp = 0;
+    directionDown = 0;
+    updateScrolling();    
 }, true);
