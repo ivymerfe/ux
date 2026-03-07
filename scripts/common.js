@@ -39,14 +39,15 @@ function updateScrolling() {
 }
 
 window.addEventListener('keydown', function (e) {
-    if (e.ctrlKey && !e.shiftKey && e.code === 'KeyW') {
+    const special = (e.ctrlKey || e.altKey) && !e.shiftKey;
+    if (special && (e.code === 'KeyW' || e.code === 'KeyE')) {
         if (!e.repeat) {
             directionUp = 1;
             updateScrolling();
         }
         e.preventDefault();
     }
-    if (e.ctrlKey && !e.shiftKey && e.code === 'KeyD') {
+    if (special && e.code === 'KeyD') {
         if (!e.repeat) {
             directionDown = 1;
             updateScrolling();
@@ -67,7 +68,7 @@ window.addEventListener('keydown', function (e) {
 }, true);
 
 window.addEventListener('keyup', function (e) {
-    if (e.code === 'KeyW') {
+    if (e.code === 'KeyW' || e.code === 'KeyE') {
         directionUp = 0;
         updateScrolling();
     }
@@ -75,7 +76,7 @@ window.addEventListener('keyup', function (e) {
         directionDown = 0;
         updateScrolling();
     }
-    if (!e.ctrlKey) {
+    if (!e.ctrlKey && !e.altKey) {
         directionUp = 0;
         directionDown = 0;
         updateScrolling();
