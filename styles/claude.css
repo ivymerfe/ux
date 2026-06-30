@@ -1,0 +1,36 @@
+.bg-bg-100 {
+  background-color: #101010;
+}
+
+.bg-bg-000 {
+  background-color: #101010;
+}
+
+.bg-bg-300 {
+  background-color: #202020;
+}
+
+.bg-bg-000\/50 {
+  background-color: #151515;
+}
+
+[data-testid="page-header"] .bg-gradient-to-b {
+  background: none !important;
+}
+
+[data-autoscroll-container="true"] > div > div {
+  padding-inline: 0 !important;
+}
+
+.max-w-3xl {
+  max-width: 100% !important;
+}
+
+[data-chat-input-container="true"] {
+  margin-inline: 2rem;
+  width: auto;
+}
+
+[data-disclaimer="true"] {
+  display: none !important;
+}

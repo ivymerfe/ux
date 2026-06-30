@@ -5,6 +5,11 @@
   "version": "1.0",
   "author": "Ivy",
   "permissions": [],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ux@ivy.me"
+    }
+  },
   "content_scripts": [
     {
       "matches": ["https://chatgpt.com/*"],
@@ -19,15 +24,15 @@
       "run_at": "document_start"
     },
     {
-      "matches": ["https://gemini.google.com/*"],
-      "js": ["scripts/gemini_main.js"],
-      "run_at": "document_start",
-      "world": "MAIN"
-    },
-    {
       "matches": ["https://chat.deepseek.com/*"],
       "css": ["styles/deepseek.css"],
       "js": ["scripts/deepseek.js", "scripts/common.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://claude.ai/*"],
+      "css": ["styles/claude.css"],
+      "js": ["scripts/claude.js", "scripts/common.js"],
       "run_at": "document_start"
     }
   ]

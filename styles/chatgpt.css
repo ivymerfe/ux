@@ -1,35 +1,55 @@
-
-.dark {
-    --bg-primary: #101010 !important;
-    --main-surface-primary: #101010 !important;
-    --bg-elevated-secondary: #101010 !important;
+html.dark :not(:where(.light, .light *)) {
+  --bg-secondary-surface: #101010 !important;
+  --main-surface-primary: #101010 !important;
+  --sidebar-surface-primary: #101010 !important;
+  --bg-primary: #101010 !important;
+  --bg-elevated-secondary: #151515 !important;
 }
 
-.bg-token-bg-primary {
-    background: #151515 !important;
+#page-header {
+  background: transparent !important;
+  height: auto !important;
+  box-shadow: none !important;
 }
 
-div[data-testid="accounts-profile-button"] + div {
-    display: none !important;
+[data-testid="model-switcher-dropdown-button"] {
+  display: none !important;
+}
+
+#page-header .lg\:block {
+  display: none !important;
+}
+
+.\[--sticky-padding-top\:var\(--header-height\)\] {
+  --sticky-padding-top: 0 !important;
 }
 
 .\[view-transition-name\:var\(--vt-disclaimer\)\] {
-    display: none !important;
+  display: none !important;
+}
+
+.text-base {
+  padding-inline: 0 !important;
+  margin-inline: 1rem !important;
 }
 
 .\[--thread-content-max-width\:40rem\] {
-    --thread-content-max-width: 100% !important;
+  margin: 0 !important;
+  max-width: 100% !important;
 }
 
-.absolute.start-0.end-0.bottom-full.-z-1 {
-    display: none;
+.markdown p {
+  margin-block: 0rem !important;
 }
 
-
-#page-header .lg\:block {
-   display: none !important;
+.markdown-new-styling p {
+  margin-block: 0rem !important;
 }
 
-table {
-    padding-left: 2rem;
+.markdown hr {
+  margin-block: 1rem !important;
+}
+
+.markdown-new-styling hr {
+  margin-block: 1rem !important;
 }

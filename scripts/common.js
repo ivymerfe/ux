@@ -1,4 +1,6 @@
 const SCROLL_SPEED = 22;
+const KEY_UP = "KeyD";
+const KEY_DOWN = "KeyF";
 
 let scrollAnimationFrame = null;
 let scrollElement = null;
@@ -42,14 +44,14 @@ window.addEventListener(
   "keydown",
   function (e) {
     const special = (e.ctrlKey || e.altKey) && !e.shiftKey;
-    if (special && e.code === "KeyE") {
+    if (special && e.code === KEY_UP) {
       if (!e.repeat) {
         directionUp = 1;
         updateScrolling();
       }
       e.preventDefault();
     }
-    if (special && e.code === "KeyR") {
+    if (special && e.code === KEY_DOWN) {
       if (!e.repeat) {
         directionDown = 1;
         updateScrolling();
@@ -77,11 +79,11 @@ window.addEventListener(
 window.addEventListener(
   "keyup",
   function (e) {
-    if (e.code === "KeyE") {
+    if (e.code === KEY_UP) {
       directionUp = 0;
       updateScrolling();
     }
-    if (e.code === "KeyR") {
+    if (e.code === KEY_DOWN) {
       directionDown = 0;
       updateScrolling();
     }

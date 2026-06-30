@@ -1,69 +1,76 @@
-:where(.theme-host) {
-    --bard-color-sidenav-background-desktop: #101010 !important;
-    --gem-sys-color--surface: #101010 !important;
-    --bard-color-surface-dim-tmp: #101010 !important;
-    --gem-sys-color--surface-bright: #151515dd !important;
-    --gem-sys-color--surface-container: #151515bb !important;
+:where(.theme-host):where(.dark-theme) {
+  --gem-sys-color--surface: #101010 !important;
+  --gem-sys-color--surface-bright: #101010 !important;
+  --lumi-sys-color--surface: #101010 !important;
+  --lumi-sys-color--surface-bright: #101010 !important;
+  --lumi-sys-color--surface-dim: #202020 !important;
 }
 
-.desktop-ogb-buffer {
-    position: absolute !important;
+:where(.theme-host):where(.enable-lm-spacing-tokens) {
+  --gem-sys-shape--corner-extra-large-max: 16px !important;
+  --gem-sys-spacing--xs: 4px !important;
+  --gem-sys-spacing--s: 6px !important;
+  --gem-sys-spacing--m: 8px !important;
+  --gem-sys-spacing--l: 10px !important;
+  --gem-sys-spacing--xl: 12px !important;
+  --gem-sys-spacing--xxl: 14px !important;
+  --gem-sys-spacing--xxxl: 16px !important;
 }
 
-.top-bar-actions .center-section {
-    display: none !important;
+bard-sidenav {
+  border-right: #303030 1px solid !important;
 }
 
-upsell-button {
-    display: none !important;
+input-area-v2 {
+  border: #303030 1px solid !important;
+}
+
+.formatted-code-block-internal-container {
+  padding: 10px 0 15px 15px !important;
+  border: #303030 1px solid !important;
+}
+
+.show-lm-background:before {
+  background: none !important;
 }
 
 .hallucination-disclaimer {
-    display: none !important;
+  display: none !important;
 }
 
-.avatar-gutter {
-    display: none !important;
+g1-dynamic-upsell-button {
+  display: none !important;
+}
+
+location-footer {
+  display: none !important;
 }
 
 .conversation-container {
-    max-width: 100% !important;
+  max-width: 100% !important;
 }
 
 user-query {
-    max-width: 100% !important;
+  max-width: 100% !important;
 }
 
 .input-area-container {
-    max-width: 100% !important;
+  max-width: 100% !important;
 }
 
 input-container {
-    position: absolute !important;
-    bottom: 0 !important;
+  position: absolute !important;
+  bottom: 0 !important;
 }
 
 input-container:before {
-    display: none !important;
+  display: none !important;
 }
 
 #chat-history infinite-scroller {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  gap: 0;
 }
 
 #chat-history infinite-scroller > :last-child {
-    padding-bottom: 168px !important;
-}
-
-.mobile-controls {
-    margin-bottom: 0 !important;
-}
-
-.desktop-controls {
-    margin: 0 !important;
-}
-
-.text-input-field_textarea-wrapper {
-    margin-bottom: 0 !important;
+  padding-bottom: 84px !important;
 }
